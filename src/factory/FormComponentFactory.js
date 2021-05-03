@@ -1,6 +1,5 @@
 import ShortAnswerComponent from '../components/ShortAnswerComponent';
 import ParagraphComponent from '../components/ParagraphComponent';
-import RadioBoxComponent from '../components/RadioBoxComponent';
 import MultipleChoiceComponent from '../components/MultipleChoiceComponent';
 import CheckBoxComponent from '../components/CheckBoxComponent';
 import DropDownComponent from '../components/DropDownComponent';
