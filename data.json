@@ -1,362 +1,90 @@
 [
   {
+    "type": "ShortAnswerComponent",
     "title": "The ShortAnswer",
-    "type": 0,
     "postSubmitIds": [
       1849712206
     ],
-    "jsonData": [
-      1771989111,
-      "The ShortAnswer",
-      null,
-      0,
-      [
-        [
-          1849712206,
-          null,
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1849712206,
-        null,
-        1
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "ParagraphComponent",
     "title": "Paragraph",
-    "type": 1,
     "postSubmitIds": [
       2061640560
     ],
-    "jsonData": [
-      941158930,
-      "Paragraph",
-      null,
-      1,
-      [
-        [
-          2061640560,
-          null,
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        2061640560,
-        null,
-        1
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "DropDownComponent",
     "title": "The Dropdown",
-    "type": 3,
     "postSubmitIds": [
       764713281
     ],
-    "jsonData": [
-      443923522,
-      "The Dropdown",
-      null,
-      3,
-      [
-        [
-          764713281,
-          [
-            [
-              "Option 1",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "Option 2",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "Option 3",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "Option 4",
-              null,
-              null,
-              null,
-              0
-            ]
-          ],
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        764713281,
-        [
-          [
-            "Option 1",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "Option 2",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "Option 3",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "Option 4",
-            null,
-            null,
-            null,
-            0
-          ]
-        ],
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0
-      ]
-    ],
-    "value": "",
     "choices": [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      {
+        "title": "Option 1",
+        "isTicked": false
+      },
+      {
+        "title": "Option 2",
+        "isTicked": false
+      },
+      {
+        "title": "Option 3",
+        "isTicked": false
+      },
+      {
+        "title": "Option 4",
+        "isTicked": false
+      }
     ]
   },
   {
+    "type": "LinearScaleComponent",
     "title": "The LinearScale",
-    "type": 5,
     "postSubmitIds": [
       2061997281
     ],
-    "jsonData": [
-      269900416,
-      "The LinearScale",
-      null,
-      5,
-      [
-        [
-          2061997281,
-          [
-            [
-              "1"
-            ],
-            [
-              "2"
-            ],
-            [
-              "3"
-            ],
-            [
-              "4"
-            ],
-            [
-              "5"
-            ]
-          ],
-          0,
-          [
-            "",
-            ""
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        2061997281,
-        [
-          [
-            "1"
-          ],
-          [
-            "2"
-          ],
-          [
-            "3"
-          ],
-          [
-            "4"
-          ],
-          [
-            "5"
-          ]
-        ],
-        0,
-        [
-          "",
-          ""
-        ]
-      ]
-    ],
-    "value": "",
     "choices": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
+      {
+        "title": "1",
+        "isTicked": false
+      },
+      {
+        "title": "2",
+        "isTicked": false
+      },
+      {
+        "title": "3",
+        "isTicked": false
+      },
+      {
+        "title": "4",
+        "isTicked": false
+      },
+      {
+        "title": "5",
+        "isTicked": false
+      }
     ]
   },
   {
+    "type": "MultipleChoiceGridComponent",
     "title": "This MultipleChoiceGrid",
-    "type": 7,
     "postSubmitIds": [
       1910049327,
       1115367609
     ],
-    "jsonData": [
-      1250971904,
-      "This MultipleChoiceGrid",
-      null,
-      7,
-      [
-        [
-          1910049327,
-          [
-            [
-              "Column 1"
-            ],
-            [
-              "Column 2"
-            ]
-          ],
-          0,
-          [
-            "Row 1"
-          ],
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [
-            0
-          ]
-        ],
-        [
-          1115367609,
-          [
-            [
-              "Column 1"
-            ],
-            [
-              "Column 2"
-            ]
-          ],
-          0,
-          [
-            "Row 2"
-          ],
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [
-            0
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1910049327,
-        [
-          [
-            "Column 1"
-          ],
-          [
-            "Column 2"
-          ]
-        ],
-        0,
-        [
-          "Row 1"
-        ],
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        [
-          0
-        ]
-      ],
-      [
-        1115367609,
-        [
-          [
-            "Column 1"
-          ],
-          [
-            "Column 2"
-          ]
-        ],
-        0,
-        [
-          "Row 2"
-        ],
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        [
-          0
-        ]
-      ]
-    ],
-    "value": "",
-    "options": [
+    "choices": [
       {
         "postId": 1910049327,
-        "row": "Row 1",
-        "columns": [
+        "title": "Row 1",
+        "choices": [
           {
             "isTicked": false,
             "value": "Column 1"
@@ -369,8 +97,8 @@
       },
       {
         "postId": 1115367609,
-        "row": "Row 2",
-        "columns": [
+        "title": "Row 2",
+        "choices": [
           {
             "isTicked": false,
             "value": "Column 1"
@@ -384,128 +112,17 @@
     ]
   },
   {
+    "type": "TickBoxGridComponent",
     "title": "This TickBoxGrid",
-    "type": 7,
     "postSubmitIds": [
       82604262,
       134835006
     ],
-    "jsonData": [
-      1917952783,
-      "This TickBoxGrid",
-      null,
-      7,
-      [
-        [
-          82604262,
-          [
-            [
-              "Column 1"
-            ],
-            [
-              "Column 2"
-            ]
-          ],
-          0,
-          [
-            "Row 1"
-          ],
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [
-            1
-          ]
-        ],
-        [
-          134835006,
-          [
-            [
-              "Column 1"
-            ],
-            [
-              "Column 2"
-            ]
-          ],
-          0,
-          [
-            "Row 2"
-          ],
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          [
-            1
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        82604262,
-        [
-          [
-            "Column 1"
-          ],
-          [
-            "Column 2"
-          ]
-        ],
-        0,
-        [
-          "Row 1"
-        ],
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        [
-          1
-        ]
-      ],
-      [
-        134835006,
-        [
-          [
-            "Column 1"
-          ],
-          [
-            "Column 2"
-          ]
-        ],
-        0,
-        [
-          "Row 2"
-        ],
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        [
-          1
-        ]
-      ]
-    ],
-    "value": "",
-    "options": [
+    "choices": [
       {
         "postId": 82604262,
-        "row": "Row 1",
-        "columns": [
+        "title": "Row 1",
+        "choices": [
           {
             "isTicked": false,
             "value": "Column 1"
@@ -518,8 +135,8 @@
       },
       {
         "postId": 134835006,
-        "row": "Row 2",
-        "columns": [
+        "title": "Row 2",
+        "choices": [
           {
             "isTicked": false,
             "value": "Column 1"
@@ -533,478 +150,145 @@
     ]
   },
   {
+    "type": "DatePickerComponent",
     "title": "The DateTime",
-    "type": 9,
     "postSubmitIds": [
       1355402643
     ],
-    "jsonData": [
-      295367331,
-      "The DateTime",
-      null,
-      9,
-      [
-        [
-          1355402643,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          [
-            0,
-            1
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1355402643,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        [
-          0,
-          1
-        ]
-      ]
-    ],
-    "value": "",
-    "date": {
+    "choices": {
       "year": 1970,
       "month": 1,
       "day": 1
     }
   },
   {
+    "type": "TimeComponent",
     "title": "The Time",
-    "type": 10,
     "postSubmitIds": [
       1012493908
     ],
-    "jsonData": [
-      2076443351,
-      "The Time",
-      null,
-      10,
-      [
-        [
-          1012493908,
-          null,
-          0,
-          null,
-          null,
-          null,
-          [
-            0
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1012493908,
-        null,
-        0,
-        null,
-        null,
-        null,
-        [
-          0
-        ]
-      ]
-    ],
-    "value": "",
-    "time": {
+    "choices": {
       "hour": 0,
       "min": 0
     }
   },
   {
+    "type": "MultipleChoiceComponent",
     "title": "Are you a new or existing customer?",
-    "type": 2,
     "postSubmitIds": [
       1000057
     ],
-    "jsonData": [
-      1795050495,
-      "Are you a new or existing customer?",
-      "",
-      2,
-      [
-        [
-          1000057,
-          [
-            [
-              "I am a new customer",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "I am an existing customer",
-              null,
-              null,
-              null,
-              0
-            ]
-          ],
-          0
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000057,
-        [
-          [
-            "I am a new customer",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "I am an existing customer",
-            null,
-            null,
-            null,
-            0
-          ]
-        ],
-        0
-      ]
-    ],
-    "value": "",
     "choices": [
-      "I am a new customer",
-      "I am an existing customer"
+      {
+        "title": "I am a new customer",
+        "isTicked": false
+      },
+      {
+        "title": "I am an existing customer",
+        "isTicked": false
+      }
     ]
   },
   {
+    "type": "ShortAnswerComponent",
     "title": "What is the item you would like to order?",
-    "type": 0,
     "postSubmitIds": [
       1000027
     ],
-    "jsonData": [
-      1941031617,
-      "What is the item you would like to order?",
-      "Please enter the product number",
-      0,
-      [
-        [
-          1000027,
-          null,
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000027,
-        null,
-        1
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "CheckBoxComponent",
     "title": "What color(s) would you like to order?",
-    "type": 4,
     "postSubmitIds": [
       967112212
     ],
-    "jsonData": [
-      312604734,
-      "What color(s) would you like to order?",
-      null,
-      4,
-      [
-        [
-          967112212,
-          [
-            [
-              "color 1",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "color 2",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "color 3",
-              null,
-              null,
-              null,
-              0
-            ],
-            [
-              "color 4",
-              null,
-              null,
-              null,
-              0
-            ]
-          ],
-          0
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        967112212,
-        [
-          [
-            "color 1",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "color 2",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "color 3",
-            null,
-            null,
-            null,
-            0
-          ],
-          [
-            "color 4",
-            null,
-            null,
-            null,
-            0
-          ]
-        ],
-        0
-      ]
-    ],
-    "value": "",
     "choices": [
-      "color 1",
-      "color 2",
-      "color 3",
-      "color 4"
+      {
+        "title": "color 1",
+        "isTicked": false
+      },
+      {
+        "title": "color 2",
+        "isTicked": false
+      },
+      {
+        "title": "color 3",
+        "isTicked": false
+      },
+      {
+        "title": "color 4",
+        "isTicked": false
+      }
     ]
   },
   {
+    "type": "ParagraphComponent",
     "title": "Product options",
-    "type": 1,
     "postSubmitIds": [
       2055232012
     ],
-    "jsonData": [
-      1810633354,
-      "Product options",
-      "Choose size and number per color",
-      1,
-      [
-        [
-          2055232012,
-          null,
-          0
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        2055232012,
-        null,
-        0
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "ShortAnswerComponent",
     "title": "Your name",
-    "type": 0,
     "postSubmitIds": [
       1000020
     ],
-    "jsonData": [
-      599451360,
-      "Your name",
-      "",
-      0,
-      [
-        [
-          1000020,
-          null,
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000020,
-        null,
-        1
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "ShortAnswerComponent",
     "title": "Phone number",
-    "type": 0,
     "postSubmitIds": [
       1000022
     ],
-    "jsonData": [
-      1183334637,
-      "Phone number",
-      "",
-      0,
-      [
-        [
-          1000022,
-          null,
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000022,
-        null,
-        1
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "ShortAnswerComponent",
     "title": "E-mail",
-    "type": 0,
     "postSubmitIds": [
       1000025
     ],
-    "jsonData": [
-      1146347585,
-      "E-mail",
-      "",
-      0,
-      [
-        [
-          1000025,
-          null,
-          0,
-          null,
-          [
-            [
-              2,
-              102
-            ]
-          ]
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000025,
-        null,
-        0,
-        null,
-        [
-          [
-            2,
-            102
-          ]
-        ]
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   },
   {
+    "type": "CheckBoxComponent",
     "title": "Preferred contact method",
-    "type": 4,
     "postSubmitIds": [
       1000026
     ],
-    "jsonData": [
-      343833981,
-      "Preferred contact method",
-      "",
-      4,
-      [
-        [
-          1000026,
-          [
-            [
-              "Phone"
-            ],
-            [
-              "Email"
-            ]
-          ],
-          1
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000026,
-        [
-          [
-            "Phone"
-          ],
-          [
-            "Email"
-          ]
-        ],
-        1
-      ]
-    ],
-    "value": "",
     "choices": [
-      "Phone",
-      "Email"
+      {
+        "title": "Phone",
+        "isTicked": false
+      },
+      {
+        "title": "Email",
+        "isTicked": false
+      }
     ]
   },
   {
+    "type": "ParagraphComponent",
     "title": "Questions and comments",
-    "type": 1,
     "postSubmitIds": [
       1000023
     ],
-    "jsonData": [
-      1870700300,
-      "Questions and comments",
-      "",
-      1,
-      [
-        [
-          1000023,
-          null,
-          0
-        ]
-      ]
-    ],
-    "componentData": [
-      [
-        1000023,
-        null,
-        0
-      ]
-    ],
-    "value": ""
+    "choices": {
+      "value": ""
+    }
   }
 ]

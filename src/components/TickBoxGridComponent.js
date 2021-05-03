@@ -1,34 +1,18 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import { collect, getPostParam } from '../utils/Utils.js';
+import { collect, getPostParam } from '../utils/Utils';
+import * as Utils from '../utils/Utils';
 
 class TickBoxGridComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
 
     const componentData = this.componentData;
-    this.options = [];
-
-    componentData.forEach((option) => {
-      const row = option[3][0];
-      const postId = option[0];
-      const columns = option[1];
-
-      this.options.push({
-        postId,
-        row: row,
-        columns: columns.map((column) => {
-          return {
-            isTicked: false,
-            value: column[0]
-          };
-        })
-      });
-    })
+    this.choices = Utils.getGridChoiceList(componentData);
   }
   getPostData() {
-    let result = this.options.map((row) => {
-      return row.columns.map((column) => {
-        return !column.isTicked ? getPostParam(row.postId, column.value) : null;
+    let result = this.choices.map((row) => {
+      return row.choices.map((choice) => {
+        return choice.isTicked ? getPostParam(row.postId, choice.value) : null;
       }).filter(str => str != null).join('&');
     }).filter(str => str.length > 0).join('&');
 

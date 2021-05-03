@@ -2,8 +2,7 @@
 import fs from 'fs';
 import got from 'got';
 import { JSDOM } from 'jsdom';
-
-import FormComponentFactory from './factory/FormComponentFactory.js';
+import { getComponents } from './ComponentParser'
 
 export default async function App(argc, argv) {
   const url =
@@ -24,28 +23,18 @@ export default async function App(argc, argv) {
   let allData = getAllData();
   let componentDataArray = allData[1][1];
 
-  const components = [];
+  const components = getComponents(componentDataArray);
 
-  for (const component of componentDataArray) {
-    const type = component[3];
-    const componentData = component[4];
-    const jsonData = component;
-
-    if (componentData) {
-      const data = {
-        type,
-        jsonData,
-        componentData
-      };
-
-      components.push(FormComponentFactory(data));
-    }
-  }
   // Write parsed data to json file
-  fs.writeFileSync('data.json', JSON.stringify(components, null, 2));
+  //fs.writeFileSync('data.json', JSON.stringify(components, null, 2));
 
   // Print post param data of all components
+  /*
   console.log(components.map(component => {
     return component.getPostData();
-  }).join("&"));
+  }).filter(str => str != null && str.length > 0).join("&"));*/
+
+  fs.writeFileSync('data.json', JSON.stringify(components.map(component => {
+    return component.getComponentObject();
+  }), null, 2));
 }

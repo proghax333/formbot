@@ -1,10 +1,12 @@
 import GoogleFormComponent from './GoogleFormComponent';
 import { collect, getPostParam } from '../utils/Utils.js';
+import * as Utils from '../utils/Utils';
 
 class DatePickerComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
-    this.date = {
+    
+    this.choices = {
       year: 1970,
       month: 1,
       day: 1,
@@ -13,7 +15,7 @@ class DatePickerComponent extends GoogleFormComponent {
 
   getPostData() {
     let result = collect(
-      this.date,
+      this.choices,
       (key, value) => {
         return getPostParam(`${this.postSubmitIds[0]}_${key}`, value);
       }, '&'

@@ -1,12 +1,13 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
 import { getPostParam } from '../utils/Utils.js';
+import * as Utils from '../utils/Utils';
 
 class CheckBoxComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
 
     const componentData = this.componentData;
-    this.choices = componentData[0][1].map(option => option[0]);
+    this.choices = Utils.getMultipleChoiceList(componentData);
   }
   getPostData() {
     let result = getPostParam(this.postSubmitIds[0], this.value);

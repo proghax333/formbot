@@ -4,7 +4,8 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore *.json --exec babel-node --trace-warnings ./index.js",
+    "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./index.js",
+    "build": "babel -d ./build ./src -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -29,6 +30,8 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
-    "babel-plugin-import-directory": "^1.1.0"
+    "babel-plugin-import-directory": "^1.1.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0"
   }
 }

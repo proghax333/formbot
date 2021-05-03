@@ -23,6 +23,15 @@ class GoogleFormComponent
   {
     return '';
   }
+  getComponentObject()
+  {
+    return {
+      type: this.constructor.name,
+      title: this.title,
+      postSubmitIds: this.postSubmitIds,
+      choices: this.choices
+    }
+  }
 }
 
 export default GoogleFormComponent;
