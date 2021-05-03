@@ -1,4 +1,5 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
+import { collect, getPostParam } from '../utils/Utils';
 
 class DropDownComponent extends GoogleFormComponent {
   constructor(data) {
@@ -8,7 +9,7 @@ class DropDownComponent extends GoogleFormComponent {
     this.choices = componentData[0][1].map(option => option[0]);
   }
   getPostData() {
-    return `entry.${this.postSubmitIds[0]}=${this.value}`;
+    return getPostParam(this.postSubmitIds[0], this.value);
   }
 }
 

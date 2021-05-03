@@ -1,12 +1,12 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import * as Utils from '../utils/Utils.js';
+import { collect, getPostParam } from '../utils/Utils.js';
 
 class ParagraphComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
   }
   getPostData() {
-    return `entry.${this.postSubmitIds[0]}=${this.value}`;
+    return getPostParam(this.postSubmitIds[0], this.value);
   }
 }
 

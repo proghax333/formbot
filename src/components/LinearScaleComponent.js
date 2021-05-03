@@ -1,5 +1,5 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import * as Utils from '../utils/Utils.js';
+import { collect, getPostParam } from '../utils/Utils';
 
 class LinearScaleComponent extends GoogleFormComponent {
   constructor(data) {
@@ -9,7 +9,7 @@ class LinearScaleComponent extends GoogleFormComponent {
     this.choices = componentData[0][1].map(option => option[0]);
   }
   getPostData() {
-    return `entry.${this.postSubmitIds[0]}=${this.value}`;
+    return getPostParam(this.postSubmitIds[0], this.value);
   }
 }
 

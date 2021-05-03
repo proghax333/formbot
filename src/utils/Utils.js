@@ -12,3 +12,8 @@ export function collect(object, mapper, separator) {
 
   return result;
 }
+
+export function getPostParam(key, value)
+{
+  return `entry.${key}=${value}`;
+}

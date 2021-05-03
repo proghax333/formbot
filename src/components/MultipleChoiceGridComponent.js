@@ -1,4 +1,5 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
+import { collect, getPostParam } from '../utils/Utils';
 
 class MultipleChoiceGridComponent extends GoogleFormComponent {
   constructor(data) {
@@ -27,7 +28,7 @@ class MultipleChoiceGridComponent extends GoogleFormComponent {
   getPostData() {
     let result = this.options.map((row) => {
       return row.columns.map((column) => {
-        return !column.isTicked ? `entry.${row.postId}=${column.value}` : null;
+        return !column.isTicked ? getPostParam(row.postId, column.value) : null;
       }).filter(str => str != null).join('&');
     }).filter(str => str.length > 0).join('&');
 
