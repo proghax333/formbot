@@ -10,6 +10,7 @@ class DatePickerComponent extends GoogleFormComponent {
       day: 1,
     };
   }
+
   getPostData() {
     let result = Utils.collect(
       this.date,
@@ -18,7 +19,6 @@ class DatePickerComponent extends GoogleFormComponent {
       },
       '&'
     );
-
     return result;
   }
 }

@@ -4,7 +4,7 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js",
+    "start": "nodemon --ignore *.json --exec babel-node --trace-warnings ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,7 +23,8 @@
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "xpath": "^0.0.32"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
