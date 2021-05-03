@@ -1,11 +1,12 @@
 import ShortAnswerComponent from '../components/ShortAnswerComponent';
 import ParagraphComponent from '../components/ParagraphComponent';
 import RadioBoxComponent from '../components/RadioBoxComponent';
-import DropDownComponent from '../components/DropDownComponent';
 import MultipleChoiceComponent from '../components/MultipleChoiceComponent';
+import CheckBoxComponent from '../components/CheckBoxComponent';
+import DropDownComponent from '../components/DropDownComponent';
 import LinearScaleComponent from '../components/LinearScaleComponent';
 import MultipleChoiceGridComponent from '../components/MultipleChoiceGridComponent';
-import TickBoxComponent from '../components/TickBoxComponent';
+import TickBoxGridComponent from '../components/TickBoxGridComponent';
 import DatePickerComponent from '../components/DatePickerComponent';
 import TimeComponent from '../components/TimeComponent';
 
@@ -17,11 +18,11 @@ export default function FormComponentFactory(data) {
     case 1:
       return new ParagraphComponent(data);
     case 2:
-      return new RadioBoxComponent(data);
+      return new MultipleChoiceComponent(data);
     case 3:
       return new DropDownComponent(data);
     case 4:
-      return new MultipleChoiceComponent(data);
+      return new CheckBoxComponent(data);
     case 5:
       return new LinearScaleComponent(data);
     case 7: {
@@ -29,7 +30,7 @@ export default function FormComponentFactory(data) {
       const isTickBoxGrid = inner[inner.length - 1][0];
 
       if(isTickBoxGrid) {
-        return new TickBoxComponent(data);
+        return new TickBoxGridComponent(data);
       } else {
         return new MultipleChoiceGridComponent(data);
       }

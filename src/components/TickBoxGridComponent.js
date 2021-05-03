@@ -1,6 +1,7 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
+import * as Utils from '../utils/Utils.js';
 
-class MultipleChoiceGridComponent extends GoogleFormComponent {
+class TickBoxGridComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
 
@@ -37,4 +38,4 @@ class MultipleChoiceGridComponent extends GoogleFormComponent {
   }
 }
 
-export default MultipleChoiceGridComponent;
+export default TickBoxGridComponent;

@@ -1,6 +1,6 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
 
-class MultipleChoiceComponent extends GoogleFormComponent {
+class CheckBoxComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
 
@@ -8,8 +8,9 @@ class MultipleChoiceComponent extends GoogleFormComponent {
     this.choices = componentData[0][1].map(option => option[0]);
   }
   getPostData() {
-    return `entry.${this.postSubmitIds[0]}=${this.value}`;
+    let result = `entry.${this.postSubmitIds[0]}=${this.value}`;
+    return result;
   }
 }
 
-export default MultipleChoiceComponent;
+export default CheckBoxComponent;

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import got from 'got';
 import { JSDOM } from 'jsdom';
-import * as xpath from 'xpath';
 
 import FormComponentFactory from './factory/FormComponentFactory.js';
 
@@ -15,44 +14,40 @@ export async function main() {
   let dom = undefined;
   try {
     dom = new JSDOM(response.body);
-  } catch(e) {
-    console.error(e)
+  } catch (e) {
+    console.error(e);
   }
+
   const window = dom.window;
   const document = window.document;
 
-  const elements = document.querySelectorAll(
-    '.freebirdFormviewerViewNumberedItemContainer'
-  );
+  const scriptXPath = '/html/body/script[1]/text()';
+  const scriptElement = document.evaluate(scriptXPath, document, null, 0, null);
+  const script = scriptElement.iterateNext().textContent;
+
+  let getAllData = new Function(script + '; return FB_PUBLIC_LOAD_DATA_; ');
+  let allData = getAllData();
+  let componentDataArray = allData[1][1];
+
   const components = [];
 
-  for (const element of elements) {
-    const heading = element.querySelector('div[role="heading"]');
-    const dataParams = element.children[0].getAttribute('data-params');
+  for (const component of componentDataArray) {
+    const type = component[3];
+    const componentData = component[4];
+    const jsonData = component;
 
-    if (dataParams) {
-      const dataString = dataParams.slice(4, dataParams.length);
-      const jsonData = JSON.parse(`[${dataString}`)[0];
-      const componentData = jsonData[4];
-
-      //console.log(dataString);
-      let postSubmitIds = componentData.map((x) => x[0]);
-      let inputTypeId = jsonData[3];
-
+    if (componentData) {
       const data = {
-        title: heading.textContent,
-        type: inputTypeId,
-        postSubmitIds,
+        type,
         jsonData,
-        componentData,
+        componentData
       };
 
       components.push(FormComponentFactory(data));
-      //console.log(data);
     }
+    //console.log(data);
   }
   fs.writeFileSync('data.json', JSON.stringify(components, null, 2));
-  
 
   //fs.writeFileSync('./response.html', response.body);
   //console.log(components);
