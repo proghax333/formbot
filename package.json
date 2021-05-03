@@ -7,6 +7,7 @@
     "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
+    "clean-build": "npm run clean && npm run build",
     "start": "node ./build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,8 +27,7 @@
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
-    "require": "^2.4.20",
-    "xpath": "^0.0.32"
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
