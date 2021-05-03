@@ -1,4 +1,6 @@
-build/
 node_modules/
-output.json
 *.rest
+package-lock.json
+*.lock
+build/
+output.json
