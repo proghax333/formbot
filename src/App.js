@@ -25,16 +25,13 @@ export default async function App(argc, argv) {
 
   const components = getComponents(componentDataArray);
 
-  // Write parsed data to json file
-  //fs.writeFileSync('data.json', JSON.stringify(components, null, 2));
-
   // Print post param data of all components
   /*
   console.log(components.map(component => {
     return component.getPostData();
   }).filter(str => str != null && str.length > 0).join("&"));*/
 
-  fs.writeFileSync('data.json', JSON.stringify(components.map(component => {
+  fs.writeFileSync('output.json', JSON.stringify(components.map(component => {
     return component.getComponentObject();
   }), null, 2));
 }

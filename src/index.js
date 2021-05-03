@@ -1,8 +1,9 @@
 
-import App from './App';
+require("@babel/core").transform("code", {
+  presets: ["@babel/preset-env"],
+});
+require("babel-core/register");
+require("babel-polyfill");
 
-export async function main() {
-  console.log("Starting Parser...");
-  await App(process.argv.length, process.argv);
-  console.log("Done parsing.");
-}
+const { main } = require('./main');
+main();
