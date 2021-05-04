@@ -32,10 +32,6 @@ class MultipleChoiceGridComponent extends GoogleFormComponent {
         }).model;
       }),
     });
-
-    console.log('---------- Multiple Choice Grid ----------');
-    console.log(this.getPostData());
-    console.log('------------------------------------------');
   }
   getPostData() {
     let temp = new MultipleChoiceComponent();

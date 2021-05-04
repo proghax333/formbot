@@ -14,10 +14,6 @@ class ShortAnswerComponent extends GoogleFormComponent {
       },
       children: null
     });
-
-    console.log('---------- Short Answer ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
 
   getPostData() {

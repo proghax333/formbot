@@ -32,10 +32,6 @@ class TickBoxGridComponent extends GoogleFormComponent {
         }).model;
       }),
     });
-
-    console.log('----------  Tick Box Grid ----------');
-    console.log(this.getPostData());
-    console.log('------------------------------------------');
   }
   getPostData() {
     let temp = new CheckBoxComponent();

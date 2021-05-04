@@ -31,13 +31,10 @@ class LinearScaleComponent extends GoogleFormComponent {
           postSubmitId: null,
           title: item.title,
           value: item.title,
+          children: null,
         });
       }),
     });
-
-    console.log('---------- Linear Scale ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
   getPostData() {
     const index = this.model.value.current;

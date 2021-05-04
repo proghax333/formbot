@@ -10,7 +10,8 @@ class DatePickerComponent extends GoogleFormComponent {
       type: this.constructor.name,
       postSubmitId: null,
       title: this.title,
-
+      value: null,
+      
       children: ['Year', 'Month', 'Day'].map((item) => {
         return InputModel({
           type: 'Input',
@@ -19,13 +20,10 @@ class DatePickerComponent extends GoogleFormComponent {
           value: {
             textValue: '0',
           },
+          children: null
         });
       }),
     });
-
-    console.log('---------- Date Picker ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
 
   getPostData() {

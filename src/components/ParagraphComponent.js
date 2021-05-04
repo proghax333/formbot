@@ -14,10 +14,6 @@ class ParagraphComponent extends GoogleFormComponent {
       },
       children: null
     });
-
-    console.log('---------- Paragraph ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
 
   getPostData() {

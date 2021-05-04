@@ -23,7 +23,7 @@ class CheckBoxComponent extends GoogleFormComponent {
       title: this.title,
       postSubmitId: null,
       value: null,
-
+      
       children: list.map((item) => {
         return InputModel({
           type: 'CheckBox',
@@ -35,10 +35,6 @@ class CheckBoxComponent extends GoogleFormComponent {
         });
       }),
     });
-
-    console.log('---------- Check Box ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
 
   getPostData() {

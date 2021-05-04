@@ -31,13 +31,10 @@ class DropDownComponent extends GoogleFormComponent {
           postSubmitId: null,
           title: item.title,
           value: item.title,
+          children: null,
         });
       }),
     });
-
-    console.log('---------- Drop Down ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
   getPostData() {
     const index = this.model.value.current;

@@ -34,10 +34,6 @@ class MultipleChoiceComponent extends GoogleFormComponent {
         });
       }),
     });
-
-    console.log('---------- Multiple Choice ----------');
-    console.log(this.getPostData());
-    console.log('---------------------------------');
   }
   getPostData() {
     const index = this.model.value.current;
