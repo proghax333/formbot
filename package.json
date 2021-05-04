@@ -4,12 +4,14 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
+    "heroku-prebuild": "npm install",
     "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./src/index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
     "clean-build": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npm run clean-build && node ./build/WebApi.js"
+    "start": "npm run serve",
+    "serve": "node ./build/WebApi.js"
   },
   "keywords": [
     "google",
@@ -27,6 +29,7 @@
   ],
   "dependencies": {
     "@babel/node": "^7.13.13",
+    "babel-preset-env": "^1.7.0",
     "console-log-html": "^2.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
@@ -40,6 +43,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
     "@babel/register": "^7.13.16",
+    "babel-cli": "^6.26.0",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0"
