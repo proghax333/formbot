@@ -31,6 +31,7 @@ class MultipleChoiceComponent extends GoogleFormComponent {
           postSubmitId: null,
           title: item.title,
           value: item.title,
+          children: null,
         });
       }),
     });

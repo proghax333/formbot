@@ -2,7 +2,8 @@
 import App from './App';
 
 export async function main() {
-  console.log("Starting Parser...");
-  await App(process.argv.length, process.argv);
-  console.log("Done parsing.");
+  const argc = process.argv.length;
+  const argv = process.argv;
+
+  await App(argv[2], process.argv[3]);
 }

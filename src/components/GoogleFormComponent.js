@@ -5,28 +5,29 @@ class GoogleFormComponent {
       const title = component[1];
       const type = component[3];
       const componentData = component[4];
-      const jsonData = component;
       const postSubmitIds = componentData.map((x) => x[0]);
 
       this.title = title;
       this.type = type;
       this.postSubmitIds = postSubmitIds;
-      this.jsonData = jsonData;
       this.componentData = componentData;
     }
-    this.data = data;
     this.value = '';
+    this.model = null;
   }
 
   getPostData() {
     return '';
+  }
+  getModel() {
+    return this.model;
   }
   getComponentObject() {
     return {
       type: this.constructor.name,
       title: this.title,
       postSubmitIds: this.postSubmitIds,
-      choices: this.choices,
+      model: this.model
     };
   }
 }
