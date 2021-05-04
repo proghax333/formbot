@@ -4,6 +4,8 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./src/index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
