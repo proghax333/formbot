@@ -11,13 +11,13 @@ yarn build
 ```
 
 ## How to use
-Until further changes, you can do:
+To start the Web API server, you can do:
 ```
-npm run start google_form_url
+npm run start
 ```
 OR
 ```
-yarn start google_form_url
+yarn start
 ```
 
 The built project will be stored in the `./build` directory
