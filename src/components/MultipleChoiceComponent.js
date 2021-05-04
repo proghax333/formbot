@@ -1,16 +1,52 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import { collect, getPostParam } from '../utils/Utils';
-import * as Utils from '../utils/Utils';
+import { getPostParam, getMultipleChoiceList } from '../utils/Utils';
+import InputModel from '../InputModel';
 
 class MultipleChoiceComponent extends GoogleFormComponent {
-  constructor(data) {
-    super(data);
+  constructor(data, model) {
+    let list;
+    if (data) {
+      super(data);
+      list = getMultipleChoiceList(this);
+    } else if (model) {
+      super();
+      this.postSubmitIds = model.postSubmitIds;
+      this.title = model.title;
+      list = model.choices;
+    } else {
+      super();
+      return;
+    }
 
-    const componentData = this.componentData;
-    this.choices = Utils.getMultipleChoiceList(componentData);
+    this.model = InputModel({
+      type: this.constructor.name,
+      postSubmitId: this.postSubmitIds[0],
+      title: this.title,
+      value: {
+        current: -1,
+      },
+      children: list.map((item) => {
+        return InputModel({
+          type: 'Option',
+          postSubmitId: null,
+          title: item.title,
+          value: item.title,
+        });
+      }),
+    });
+
+    console.log('---------- Multiple Choice ----------');
+    console.log(this.getPostData());
+    console.log('---------------------------------');
   }
   getPostData() {
-    return getPostParam(this.postSubmitIds[0], this.value);
+    const index = this.model.value.current;
+    if (index == -1) return '';
+
+    return getPostParam(
+      this.model.postSubmitId,
+      this.model.children[index].value
+    );
   }
 }
 

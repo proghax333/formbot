@@ -1,16 +1,27 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import { collect, getPostParam } from '../utils/Utils.js';
-import * as Utils from '../utils/Utils';
+import { getPostParam } from '../utils/Utils.js';
+import InputModel from '../InputModel'
 
 class ParagraphComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
+    this.model = InputModel({
+      type: 'Input',
+      postSubmitId: this.postSubmitIds[0],
+      title: this.title,
+      value: {
+        textValue: '',
+      },
+      children: null
+    });
 
-    const componentData = this.componentData;
-    this.choices = Utils.getTextChoiceList(componentData);
+    console.log('---------- Paragraph ----------');
+    console.log(this.getPostData());
+    console.log('---------------------------------');
   }
+
   getPostData() {
-    return getPostParam(this.postSubmitIds[0], this.value);
+    return getPostParam(this.model.postSubmitId, this.model.value.textValue);
   }
 }
 

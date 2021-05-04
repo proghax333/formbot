@@ -1,23 +1,51 @@
 import GoogleFormComponent from './GoogleFormComponent.js';
-import { collect, getPostParam } from '../utils/Utils';
-import * as Utils from '../utils/Utils';
+import { join, getGridChoiceList } from '../utils/Utils';
+import InputModel from '../InputModel';
+import MultipleChoiceComponent from './MultipleChoiceComponent.js';
 
 class MultipleChoiceGridComponent extends GoogleFormComponent {
-  constructor(data) {
-    super(data);
+  constructor(data, model) {
+    let list;
+    if (data) {
+      super(data);
+      list = getGridChoiceList(this);
+    } else if (model) {
+      super();
+      this.postSubmitIds = model.postSubmitIds;
+      this.title = model.title;
+      list = model.choices;
+    } else {
+      super();
+      return;
+    }
 
-    const componentData = this.componentData;
-    this.choices = Utils.getGridChoiceList(componentData);
+    this.model = InputModel({
+      type: this.constructor.name,
+      postSubmitId: null,
+      title: this.title,
+      value: null,
+      children: list.map((item, index) => {
+        return new MultipleChoiceComponent(null, {
+          choices: item.choices,
+          postSubmitIds: [this.postSubmitIds[index]],
+          title: item.title,
+        }).model;
+      }),
+    });
+
+    console.log('---------- Multiple Choice Grid ----------');
+    console.log(this.getPostData());
+    console.log('------------------------------------------');
   }
   getPostData() {
-    let result = this.choices.map((row) => {
-      return row.choices.map((choice) => {
-        return choice.isTicked ? getPostParam(row.postId, choice.value) : null;
-      }).filter(str => str != null).join('&');
-    }).filter(str => str.length > 0).join('&');
-
-    //console.log(result);
-
+    let temp = new MultipleChoiceComponent();
+    let result = join(
+      this.model.children.map((item) => {
+        temp.model = item;
+        return temp.getPostData();
+      }),
+      '&'
+    );
     return result;
   }
 }

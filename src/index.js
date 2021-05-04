@@ -2,8 +2,8 @@
 require("@babel/core").transform("code", {
   presets: ["@babel/preset-env"],
 });
-require("babel-core/register");
+require("@babel/register")
 require("babel-polyfill");
 
-const { main } = require('./main');
+const { main } = require('./main.js');
 main();

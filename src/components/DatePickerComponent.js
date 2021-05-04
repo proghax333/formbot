@@ -1,24 +1,39 @@
 import GoogleFormComponent from './GoogleFormComponent';
-import { collect, getPostParam } from '../utils/Utils.js';
-import * as Utils from '../utils/Utils';
+import { join, getPostParam } from '../utils/Utils.js';
+import InputModel from '../InputModel';
 
 class DatePickerComponent extends GoogleFormComponent {
   constructor(data) {
     super(data);
-    
-    this.choices = {
-      year: 1970,
-      month: 1,
-      day: 1,
-    };
+
+    this.model = InputModel({
+      type: this.constructor.name,
+      postSubmitId: null,
+      title: this.title,
+
+      children: ['Year', 'Month', 'Day'].map((item) => {
+        return InputModel({
+          type: 'Input',
+          postSubmitId: this.postSubmitIds[0] + '_' + item.toLowerCase(),
+          title: item,
+          value: {
+            textValue: '0',
+          },
+        });
+      }),
+    });
+
+    console.log('---------- Date Picker ----------');
+    console.log(this.getPostData());
+    console.log('---------------------------------');
   }
 
   getPostData() {
-    let result = collect(
-      this.choices,
-      (key, value) => {
-        return getPostParam(`${this.postSubmitIds[0]}_${key}`, value);
-      }, '&'
+    let result = join(
+      this.model.children.map((item) => {
+        return getPostParam(item.postSubmitId, item.value.textValue);
+      }),
+      '&'
     );
     return result;
   }
