@@ -41,7 +41,6 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
     "@babel/register": "^7.13.16",
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-polyfill": "^6.26.0",
