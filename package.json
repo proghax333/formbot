@@ -4,7 +4,7 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./index.js",
+    "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./src/index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
     "clean-build": "npm run clean && npm run build",
@@ -18,7 +18,13 @@
     "fill"
   ],
   "author": "Atmanand Nagpure",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "dependencies": {
     "@babel/node": "^7.13.13",
     "console-log-html": "^2.0.2",
@@ -32,6 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
+    "@babel/register": "^7.13.16",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0"

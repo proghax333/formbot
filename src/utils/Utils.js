@@ -9,15 +9,28 @@ export function collect(object, mapper, separator) {
       result += separator + mapper(keys[i], values[i]);
     }
   }
-
   return result;
+}
+
+export function join(array, separator, filter)
+{
+  let result = array;
+  if(filter)
+  {
+    result = array.filter(filter);
+  }
+  result = result.filter(str => {
+    return str !== null && str != '';
+  });
+  return result.join(separator);
 }
 
 export function getPostParam(key, value) {
   return `entry.${key}=${value}`;
 }
 
-export function getMultipleChoiceList(componentData) {
+export function getMultipleChoiceList(component) {
+  const componentData = component.componentData;
   return componentData[0][1].map((option) => {
     return {
       title: option[0],
@@ -26,7 +39,8 @@ export function getMultipleChoiceList(componentData) {
   });
 }
 
-export function getGridChoiceList(componentData) {
+export function getGridChoiceList(component) {
+  const componentData = component.componentData;
   const choices = [];
 
   componentData.forEach((option) => {
@@ -39,8 +53,8 @@ export function getGridChoiceList(componentData) {
       title: title,
       choices: subChoices.map((choice) => {
         return {
+          title: choice[0],
           isTicked: false,
-          value: choice[0],
         };
       }),
     });
@@ -49,7 +63,7 @@ export function getGridChoiceList(componentData) {
   return choices;
 }
 
-export function getTextChoiceList(componentData)
+export function getTextChoiceList(component)
 {
   return {
     value: ""

@@ -32,6 +32,6 @@ export default async function App(argc, argv) {
   }).filter(str => str != null && str.length > 0).join("&"));*/
 
   fs.writeFileSync('output.json', JSON.stringify(components.map(component => {
-    return component.getComponentObject();
+    return component.model;
   }), null, 2));
 }
