@@ -11,7 +11,7 @@
     "clean-build": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run serve",
-    "serve": "npm install && npm run clean-build && node ./build/WebApi.js"
+    "serve": "node ./build/WebApi.js"
   },
   "keywords": [
     "google",

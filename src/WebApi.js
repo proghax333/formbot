@@ -23,7 +23,7 @@ app.get('/api/model/', (req, res) => {
     res.status(404);
   }
 });
-
+console.log(port);
 app.listen(port, () => {
   console.log(
     `Google Form Model Generator listening at http://localhost:${port}`
