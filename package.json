@@ -4,6 +4,7 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm install",
     "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./src/index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
@@ -28,6 +29,7 @@
   ],
   "dependencies": {
     "@babel/node": "^7.13.13",
+    "babel-preset-env": "^1.7.0",
     "console-log-html": "^2.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
