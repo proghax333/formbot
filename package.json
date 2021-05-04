@@ -4,7 +4,7 @@
   "description": "Form auto-fill and scrape",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm install",
+    "heroku-prebuild": "npm install",
     "dev": "nodemon --ignore *.json --exec babel-node --trace-warnings ./src/index.js",
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
