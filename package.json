@@ -8,8 +8,8 @@
     "build": "babel -d ./build ./src -s",
     "clean": "rm -rf build && mkdir build",
     "clean-build": "npm run clean && npm run build",
-    "start": "node ./build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npm run clean-build && node ./build/WebApi.js"
   },
   "keywords": [
     "google",
@@ -28,6 +28,7 @@
   "dependencies": {
     "@babel/node": "^7.13.13",
     "console-log-html": "^2.0.2",
+    "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "got": "^11.8.2",
     "jsdom": "^16.5.3",
