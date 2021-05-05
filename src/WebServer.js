@@ -5,7 +5,7 @@ require('@babel/register');
 require('babel-polyfill');
 
 const express = require('express');
-const { FormParser } = require('./FormParser');
+const { FormParser } = require('../lib/FormParser');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -23,7 +23,6 @@ app.get('/api/model/', (req, res) => {
     res.status(404);
   }
 });
-console.log(port);
 app.listen(port, () => {
   console.log(
     `Google Form Model Generator listening at http://localhost:${port}`
