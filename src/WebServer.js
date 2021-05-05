@@ -5,9 +5,13 @@ require('@babel/register');
 require('babel-polyfill');
 
 const express = require('express');
-const { FormParser } = require('../lib/FormParser');
+const cors = require('cors');
 const app = express();
+
 const port = process.env.PORT || 3000;
+const { FormParser } = require('../lib/FormParser');
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send(JSON.stringify({ message: 'Google Form Model Generator' }));
