@@ -5,7 +5,9 @@ class GoogleFormComponent {
       const title = component[1];
       const type = component[3];
       const componentData = component[4];
-      const postSubmitIds = componentData.map((x) => x[0]);
+      const postSubmitIds = componentData.map((x) => {
+        return "" + x[0];
+      });
 
       this.title = title;
       this.type = type;
